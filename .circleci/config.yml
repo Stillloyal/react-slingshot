@@ -1,0 +1,7 @@
+version: 2.1
+
+commands:
+  say-hello:
+    description: This is an example of a self made ci pipeline
+    steps:
+      - run: echo "Hello There. This is Santa Claus"
