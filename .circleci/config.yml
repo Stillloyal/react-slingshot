@@ -19,7 +19,10 @@ jobs:
           name: "Install NPM"
           command: "sudo npm install"
       - run:
-          name: "Install NPM"
+          name: "Install Brew"
+          command: "sudo apt-get install brew"
+      - run:
+          name: "Install watchman"
           command: "sudo brew install watchman"
       - run: 
           name: "Lint"
