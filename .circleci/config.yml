@@ -15,6 +15,12 @@ jobs:
       - run:
           name: "Update"
           command: "sudo apt-get update"
+      - run:
+          name: "Install NPM"
+          command: "sudo npm install"
+      - run:
+          name: "Install NPM"
+          command: "sudo brew install watchman"
       - run: 
           name: "Lint"
           command: "npm run lint"
