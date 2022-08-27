@@ -12,37 +12,22 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          name: "Update"
-          command: "sudo apt-get update"
-      - run:
-          name: "Install NPM"
-          command: "sudo npm install"
-      - run:
-          name: "Install Brew"
-          command: "sudo apt-get install brew"
-      - run:
-          name: "Install watchman"
-          command: "sudo brew install watchman"
-      - run: 
-          name: "Lint"
-          command: "npm run lint"
+      - checkout
+      - run: npm i
+      - run: npm run lint
   test:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          name: "Test"
-          command: "npm run test"
+      - run: npm i
+      - run: npm run test
   analyze:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          name: "Audit"
-          command: "npm audit"
+      - run: npm audit
 
 workflows:
   my_workflow:
